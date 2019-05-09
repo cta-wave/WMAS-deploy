@@ -24,7 +24,7 @@ services:
       - "www.web-platform.test:127.0.0.1"
       - "xn--n8j6ds53lwwkrqhv28a.web-platform.test:127.0.0.1"
     volumes:
-      - ./results:/home/ubuntu/WMAS/results
+      - ./results:/home/ubuntu/results
       - ./data:/home/ubuntu/WMAS/tools/wave/data
       - ./config.json:/home/ubuntu/WMAS/config.json
       - ./certs:/home/ubuntu/WMAS/certs

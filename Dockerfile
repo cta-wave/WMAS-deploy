@@ -43,4 +43,4 @@ RUN ./wmats2018-subset.sh
 RUN ./wave download-reference-results
 RUN mv results reference-results
 
-CMD cp -r ./reference-results/* results && pm2 start ./wpt --interpreter python -- serve && ./wave start
+CMD cp -r ./reference-results/* /home/ubuntu/results && pm2 start ./wpt --interpreter python -- serve && ./wave start
