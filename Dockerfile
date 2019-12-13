@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # install packages
 RUN apt update &&\
-    apt install git curl python -y
+    apt install git curl python virtualenv -y
 
 
 ENV APP_DIR /home/ubuntu
@@ -27,9 +27,6 @@ ENV NODE_PATH $APP_DIR/.nvm/versions/node/v$NODE_VERSION/lib/node_modules
 ENV PATH      $APP_DIR/.nvm/versions/node/v$NODE_VERSION/bin:$PATH
 
 
-
-RUN npm install -g pm2
-
 RUN mkdir WMAS && cd WMAS && git init && git remote add origin https://github.com/cta-wave/WMAS.git
 WORKDIR WMAS
 
@@ -38,9 +35,9 @@ ARG commit
 RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
 
-RUN ./wave init
+RUN cd tools/wptserve/wptserve/wave && npm install https://github.com/fraunhoferfokus/wptreport.git
 RUN ./wmats2018-subset.sh
-RUN ./wave download-reference-results
+RUN ./download-reference-results.sh
 RUN mv results reference-results
 
-CMD cp -r ./reference-results/* /home/ubuntu/results && pm2 start ./wpt --interpreter python -- serve && ./wave start
+CMD cp -r ./reference-results/* results && ./wpt serve-wave --report

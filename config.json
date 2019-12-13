@@ -33,6 +33,6 @@
     "none": {}
   },
   "aliases": [],
-  "results": "/home/ubuntu/results",
+  "results": "./results",
   "timeout": 65000
 }
