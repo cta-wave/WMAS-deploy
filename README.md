@@ -11,14 +11,6 @@ $ sudo ./build <commit id/branch/version tag> <image-tag>
 
 For example:
 ```
-$ sudo ./build 53a04bd9a2208cda4821f83de065e142bce94baf 1.0.2
-```
-or
-```
-$ sudo ./build 53a04bd 1.0.2
-```
-or
-```
 $ sudo ./build wmas2018-v1.0.2 1.0.2
 ```
 
@@ -59,8 +51,8 @@ $ sudo docker restart wmats2018
 ## Update to new version
 To update to a new version the image needs to be recreated with the new commit, just as described in [Create the image](#create-the-image).
 
-## Deploy on server with domain
-By default the server is setup for local hosting. To use a domain other than `web-platform.test` you need to replace all occurrences with your domain in `config.json` and in `docker-compose.yml` along with the mapped IP-Address (usually `127.0.0.1` needs to be changed to `0.0.0.0`)
+## Network deployment
+To make the test runner accessible by other devices in a network, the networks DNS server has to resolve all domains listed in the `docker-compose.yml`s `extra_host` list to the host machines IP address.
 
 ### SSL
 To utilize the SSL certificates for your domain, make sure the directory `certs` exists with ownership `uid=1000,gid=1000` and put them in there. Then change the path to the certificates in `config.json` to something similar to `./certs/your-key.pem`.
