@@ -3,13 +3,13 @@ version: '3'
 services:
   wmats2018:
     container_name: wmats2018
-    image: wmats2018:19w50a
+    image: wmats2018:1.0.2
     restart: always
     network_mode: "host"
-    ports:
-      - "8000:8000"
-      - "8443:8443"
-      - "8050:8050"
+    #ports:
+      #- "8000:8000"
+      #- "8443:8443"
+      #- "8050:8050"
     extra_hosts:
       - "xn--lve-6lad.not-web-platform.test:127.0.0.1"
       - "xn--lve-6lad.web-platform.test:127.0.0.1"
@@ -25,6 +25,5 @@ services:
       - "xn--n8j6ds53lwwkrqhv28a.web-platform.test:127.0.0.1"
     volumes:
       - ./results:/home/ubuntu/WMAS/results
-      - ./data:/home/ubuntu/WMAS/tools/wave/data
       - ./config.json:/home/ubuntu/WMAS/config.json
       - ./certs:/home/ubuntu/WMAS/certs

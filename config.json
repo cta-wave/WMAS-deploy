@@ -14,7 +14,6 @@
     "wave": [8050]
   },
   "check_subdomains": true,
-  "db_compaction_interval": 60000,
   "log_level": "debug",
   "bind_address": true,
   "ssl": {
@@ -33,6 +32,5 @@
     "none": {}
   },
   "aliases": [],
-  "results": "./results",
-  "timeout": 65000
+  "results": "./results"
 }
