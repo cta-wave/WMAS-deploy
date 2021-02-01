@@ -6,16 +6,20 @@
 ## Create the image
 The server is deployed in a virtual environment. An image with the desired version is required to run it. To build an image run the following command, passing a commit id:
 ```
-$ sudo docker build --build-arg commit=<commit id> -t wmats2018 .
+$ sudo ./build <commit id/branch/version tag> <image-tag>
 ```
 
 For example:
 ```
-$ sudo docker build --build-arg commit=d5b2c0607f4990d9cebd0fcca12d1b034b712708 -t wmats2018 .
+$ sudo ./build 53a04bd9a2208cda4821f83de065e142bce94baf 1.0.2
 ```
 or
 ```
-$ sudo docker build --build-arg commit=d5b2c060 -t wmats2018 .
+$ sudo ./build 53a04bd 1.0.2
+```
+or
+```
+$ sudo ./build wmas2018-v1.0.2 1.0.2
 ```
 
 ## Run the image in a container

@@ -10,8 +10,7 @@
     "http": [8000, "auto"],
     "https": [8443],
     "ws": ["auto"],
-    "wss": ["auto"],
-    "wave": [8050]
+    "wss": ["auto"]
   },
   "check_subdomains": true,
   "log_level": "debug",
