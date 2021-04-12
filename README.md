@@ -11,11 +11,14 @@ $ sudo ./build <commit id/branch/version tag> <image-tag>
 
 For example:
 ```
+$ sudo ./build wmas2018 latest
+```
+```
 $ sudo ./build wmas2018-v1.0.2 1.0.2
 ```
 
 ## Run the image in a container
-To run the image in a docker container, make sure directories `data` and `results` exist with ownership `uid=1000,gid=1000`. Then run the following command:
+What image version to use when creating a container is defined inside the `docker-compose.yml`. By default it is `latest`. To run the image in a docker container, make sure directories `data` and `results` exist with ownership `uid=1000,gid=1000`. Then run the following command:
 ```
 $ sudo docker-compose up
 ```

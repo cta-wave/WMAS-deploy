@@ -3,12 +3,12 @@ version: '3'
 services:
   wmats2018:
     container_name: wmats2018
-    image: wmats2018:1.0.2
+    image: wmats2018:latest
     restart: always
-    network_mode: "host"
-    #ports:
-      #- "8000:8000"
-      #- "8443:8443"
+    network_mode: "bridge"
+    ports:
+      - "8000:8000"
+      - "8443:8443"
     extra_hosts:
       - "xn--lve-6lad.not-web-platform.test:0.0.0.0"
       - "xn--lve-6lad.web-platform.test:0.0.0.0"
