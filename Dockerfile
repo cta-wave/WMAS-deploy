@@ -32,10 +32,13 @@ WORKDIR WMAS
 
 ARG commit
 
+USER root
+RUN npm install --global https://github.com/cta-wave/wptreport.git
+USER ubuntu
+
 RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
 
-RUN cd tools/wptserve/wptserve/wave && npm install https://github.com/fraunhoferfokus/wptreport.git
 RUN ./wmats2018-subset.sh
 RUN ./download-reference-results.sh
 RUN mv results reference-results
