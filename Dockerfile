@@ -30,11 +30,11 @@ ENV PATH      $APP_DIR/.nvm/versions/node/v$NODE_VERSION/bin:$PATH
 RUN mkdir WMAS && cd WMAS && git init && git remote add origin https://github.com/cta-wave/WMAS.git
 WORKDIR WMAS
 
-ARG commit
-
 USER root
-RUN npm install --global https://github.com/cta-wave/wptreport.git
+RUN npm install --global https://github.com/cta-wave/wptreport.git#main
 USER ubuntu
+
+ARG commit
 
 RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
