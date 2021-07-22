@@ -39,7 +39,7 @@ ARG commit
 RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
 
-RUN ./wmats2018-subset.sh
+RUN ./wmats2020-subset.sh
 RUN ./download-reference-results.sh
 RUN mv results reference-results
 
