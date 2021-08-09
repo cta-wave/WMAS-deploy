@@ -35,12 +35,14 @@ RUN npm install --global https://github.com/cta-wave/wptreport.git#main
 USER ubuntu
 
 ARG commit
+ARG runner-rev
 
 RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
 
+ARG tests-rev
 RUN ./wmats2020-subset.sh
-RUN ./download-reference-results.sh
-RUN mv results reference-results
+#RUN ./download-reference-results.sh
+#RUN mv results reference-results
 
-CMD cp -r ./reference-results/* results && ./wpt serve-wave --report
+CMD cp -r ./reference-results/* results ; ./wpt serve-wave --report
