@@ -34,11 +34,13 @@ USER root
 RUN npm install --global https://github.com/cta-wave/wptreport.git#main
 USER ubuntu
 
+ARG runner-rev
 ARG commit
 
 RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
 
+ARG tests-rev
 RUN ./wmas2018-subset.sh
 RUN ./download-reference-results.sh
 RUN mv results reference-results
