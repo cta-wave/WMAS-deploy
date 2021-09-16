@@ -2,8 +2,8 @@ version: '3'
 
 services:
   wmats2018:
-    container_name: wmats2018
-    image: wmats2018:latest
+    container_name: wmas2018
+    image: wmas2018:latest
     restart: always
     network_mode: "bridge"
     ports:
