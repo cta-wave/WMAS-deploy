@@ -50,6 +50,8 @@ ENV TEST_RUNNER_IP 127.0.0.1
 CMD cp -r ./reference-results/* results ;\
   dnsmasq \
   --no-hosts \
+  --server=1.1.1.1 \
+  --server=1.0.0.1 \
   --address=/op48.not-web-platform.test/$TEST_RUNNER_IP \
   --address=/op93.web-platform.test/$TEST_RUNNER_IP \
   --address=/op78.web-platform.test/$TEST_RUNNER_IP \

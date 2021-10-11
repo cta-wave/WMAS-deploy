@@ -27,6 +27,9 @@ Run it in background
 $ sudo docker-compose up -d
 ```
 
+## Access test runner
+To access the test runner and perform tests, open `web-platform.test/_wave/`.
+
 ## View logs
 To display the logs, simply run:
 ```
