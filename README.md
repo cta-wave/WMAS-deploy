@@ -1,4 +1,4 @@
-# WMATS Deployment
+# WMAS Deployment
 ## Requirements
 - Docker v18 or higher
 - docker-compose v1.18 or higher
@@ -6,15 +6,15 @@
 ## Create the image
 The server is deployed in a virtual environment. An image with the desired version is required to run it. To build an image run the following command, passing a commit id:
 ```
-$ sudo ./build <commit id/branch/version tag> <image-tag>
+$ sudo ./build.sh <commit id/branch/version tag> <image-tag>
 ```
 
 For example:
 ```
-$ sudo ./build wmas2020 latest
+$ sudo ./build.sh wmas2020 latest
 ```
 ```
-$ sudo ./build wmas2020-v1.0.2 1.0.2
+$ sudo ./build.sh wmas2020-v1.0.2 1.0.2
 ```
 
 ## Run the image in a container
