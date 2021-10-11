@@ -8,6 +8,7 @@ services:
     ports:
       - "8000:8000"
       - "8443:8443"
+      - "53:53/udp"
     extra_hosts:
       - "xn--lve-6lad.www.not-web-platform.test:0.0.0.0"
       - "op35.not-web-platform.test:0.0.0.0"
