@@ -2,8 +2,9 @@ FROM ubuntu:18.04
 
 # install packages
 RUN apt update &&\
-    apt install git curl python virtualenv dnsmasq -y
+    apt install git curl python3 virtualenv dnsmasq -y
 
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 ENV APP_DIR /home/ubuntu
 
