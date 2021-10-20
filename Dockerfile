@@ -2,8 +2,9 @@ FROM ubuntu:18.04
 
 # install packages
 RUN apt update &&\
-    apt install git curl python virtualenv dnsmasq -y
+    apt install git curl python3 virtualenv dnsmasq -y
 
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
 ENV APP_DIR /home/ubuntu
 
@@ -42,8 +43,8 @@ RUN git reset --hard FETCH_HEAD
 
 ARG tests-rev
 RUN ./wmas2019-subset.sh
-#RUN ./download-reference-results.sh
-#RUN mv results reference-results
+RUN ./download-reference-results.sh
+RUN mv results reference-results
 
 ENV TEST_RUNNER_IP 127.0.0.1
 
