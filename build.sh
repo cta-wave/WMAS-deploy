@@ -22,4 +22,4 @@ if [ $reload_tests = true ]; then
   args="$args --build-arg tests-rev=\"$(date | sed "s/ //g")\""
 fi
 
-docker build --build-arg commit=$1 $args -t wmas2018:$2 .
+docker build --network host --build-arg commit=$1 $args -t wmas2018:$2 .

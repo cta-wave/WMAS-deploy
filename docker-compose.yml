@@ -4,11 +4,14 @@ services:
   wmats2018:
     container_name: wmas2018
     image: wmas2018:latest
-    restart: unless-stopped
+    restart: "no"
     network_mode: "bridge"
+    dns:
+      - 1.1.1.1
     ports:
       - "8000:8000"
       - "8443:8443"
+      - "53:53/udp"
     extra_hosts:
       - "xn--lve-6lad.not.web-platform.test:0.0.0.0"
       - "xn--lve-6lad.web-platform.test:0.0.0.0"
