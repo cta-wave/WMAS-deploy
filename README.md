@@ -27,6 +27,10 @@ Run it in background
 $ sudo docker-compose up -d
 ```
 
+Note that upon first start, generating the MANIFEST.json can take some time. Restarting the server should be significantly faster.
+
+For more information on how to use and configure the server, please refer to the [documentation](https://github.com/cta-wave/WMAS/tree/wmas2020/tools/wave/docs).
+
 ## Access test runner
 To access the test runner and perform tests, open `web-platform.test/_wave/`.
 
