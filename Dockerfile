@@ -2,9 +2,11 @@ FROM ubuntu:18.04
 
 # install packages
 RUN apt update &&\
-    apt install git curl python3 virtualenv dnsmasq -y
+    apt install git curl python3 python3-pip nodejs npm dnsmasq -y
 
-RUN ln -s /usr/bin/python3 /usr/bin/python
+RUN rm /usr/bin/python ; ln -s /usr/bin/python3 /usr/bin/python
+
+RUN pip3 install --upgrade pip virtualenv virtualenvwrapper
 
 ENV APP_DIR /home/ubuntu
 
@@ -15,18 +17,6 @@ WORKDIR $APP_DIR
 RUN rm /bin/sh &&\
     ln -s /bin/bash /bin/sh
 USER ubuntu
-
-
-# Install specific version of Node.js
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-ENV NODE_VERSION 10.15.3
-RUN . .nvm/nvm.sh &&\
-    nvm install $NODE_VERSION &&\
-    nvm alias default $NODE_VERSION &&\
-    nvm use default
-ENV NODE_PATH $APP_DIR/.nvm/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH      $APP_DIR/.nvm/versions/node/v$NODE_VERSION/bin:$PATH
-
 
 RUN mkdir WMAS && cd WMAS && git init && git remote add origin https://github.com/cta-wave/WMAS.git
 WORKDIR WMAS
@@ -43,6 +33,7 @@ RUN git reset --hard FETCH_HEAD
 
 ARG tests-rev
 RUN ./wmas2020-subset.sh
+RUN ./wpt manifest --no-download --rebuild
 RUN ./download-reference-results.sh
 RUN mv results reference-results
 
