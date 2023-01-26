@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 # install packages
 RUN apt update &&\
@@ -32,7 +32,7 @@ RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
 
 ARG tests-rev
-RUN ./wmas2020-subset.sh
+RUN ./wmas2021-subset.sh
 RUN ./wpt manifest --no-download --rebuild
 RUN ./download-reference-results.sh
 RUN mv results reference-results
