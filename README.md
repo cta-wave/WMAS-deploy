@@ -37,7 +37,7 @@ To access the test runner and perform tests, open `web-platform.test/_wave/`.
 ## View logs
 To display the logs, simply run:
 ```
-$ sudo docker logs wmas2020
+$ sudo docker logs wmas2021
 ```
 
 ## Start, Stop and Restart existing container
@@ -45,17 +45,17 @@ You can control an existing container with a set of commands.
 
 Start container:
 ```
-$ sudo docker start wmas2020
+$ sudo docker start wmas2021
 ```
 
 Stop container:
 ```
-$ sudo docker stop wmas2020
+$ sudo docker stop wmas2021
 ```
 
 Restart container:
 ```
-$ sudo docker restart wmas2020
+$ sudo docker restart wmas2021
 ```
 
 ## Update to new version

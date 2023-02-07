@@ -1,5 +1,7 @@
 FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND noninteractive
+
 # install packages
 RUN apt update &&\
     apt install git curl python3 python3-pip nodejs npm dnsmasq -y
