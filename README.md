@@ -11,10 +11,10 @@ $ sudo ./build.sh <commit id/branch/version tag> <image-tag>
 
 For example:
 ```
-$ sudo ./build.sh wmas2020 latest
+$ sudo ./build.sh wmas2021 latest
 ```
 ```
-$ sudo ./build.sh wmas2020-v1.0.2 1.0.2
+$ sudo ./build.sh wmas2021-v1.0.2 1.0.2
 ```
 
 ## Run the image in a container
@@ -29,7 +29,7 @@ $ sudo docker-compose up -d
 
 Note that upon first start, generating the MANIFEST.json can take some time. Restarting the server should be significantly faster.
 
-For more information on how to use and configure the server, please refer to the [documentation](https://github.com/cta-wave/WMAS/tree/wmas2020/tools/wave/docs).
+For more information on how to use and configure the server, please refer to the [documentation](https://github.com/cta-wave/WMAS/tree/wmas2021/tools/wave/docs).
 
 ## Access test runner
 To access the test runner and perform tests, open `web-platform.test/_wave/`.
