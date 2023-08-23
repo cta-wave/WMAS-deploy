@@ -2,8 +2,7 @@ FROM ubuntu:18.04
 
 # install packages
 RUN apt update &&\
-    apt install git curl python virtualenv dnsmasq -y
-
+    apt install git curl python3 nodejs npm virtualenv dnsmasq -y
 
 ENV APP_DIR /home/ubuntu
 
@@ -14,17 +13,6 @@ WORKDIR $APP_DIR
 RUN rm /bin/sh &&\
     ln -s /bin/bash /bin/sh
 USER ubuntu
-
-
-# Install specific version of Node.js
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-ENV NODE_VERSION 10.15.3
-RUN . .nvm/nvm.sh &&\
-    nvm install $NODE_VERSION &&\
-    nvm alias default $NODE_VERSION &&\
-    nvm use default
-ENV NODE_PATH $APP_DIR/.nvm/versions/node/v$NODE_VERSION/lib/node_modules
-ENV PATH      $APP_DIR/.nvm/versions/node/v$NODE_VERSION/bin:$PATH
 
 
 RUN mkdir WMAS && cd WMAS && git init && git remote add origin https://github.com/cta-wave/WMAS.git
