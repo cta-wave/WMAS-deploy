@@ -5,3 +5,5 @@ This is a repository for the WMAS 2018, WMAS 2019 and WMAS 2020 deployment (Dock
 * WMAS 2019 Deployment: [wmas2019](../../tree/wmas2019)
 * WMAS 2020 Deployment: [wmas2020](../../tree/wmas2020)
 * WMAS 2021 Deployment: [wmas2021](../../tree/wmas2021)
+* WMAS 2022 Deployment (**WIP**): [wmas2022](../../tree/wmas2022)
+* WMAS 2023 Deployment (**WIP**): [wmas2023](../../tree/wmas2023)
