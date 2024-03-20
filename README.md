@@ -14,7 +14,7 @@ For example:
 $ sudo ./build wmas2018 latest
 ```
 ```
-$ sudo ./build wmas2018-v1.0.2 1.0.2
+$ sudo ./build wmas2018-v1.1.0 1.1.0
 ```
 
 ## Run the image in a container
@@ -30,7 +30,7 @@ $ sudo docker-compose up -d
 ## View logs
 To display the logs, simply run:
 ```
-$ sudo docker logs wmats2018
+$ sudo docker logs wmas2018
 ```
 
 ## Start, Stop and Restart existing container
@@ -38,17 +38,17 @@ You can control an existing container with a set of commands.
 
 Start container:
 ```
-$ sudo docker start wmats2018
+$ sudo docker start wmas2018
 ```
 
 Stop container:
 ```
-$ sudo docker stop wmats2018
+$ sudo docker stop wmas2018
 ```
 
 Restart container:
 ```
-$ sudo docker restart wmats2018
+$ sudo docker restart wmas2018
 ```
 
 ## Update to new version
