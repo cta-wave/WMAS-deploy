@@ -14,7 +14,7 @@ For example:
 $ sudo ./build wmas2018 latest
 ```
 ```
-$ sudo ./build wmas2018-v1.0.0 1.0.0
+$ sudo ./build wmas2018-v1.0.1 1.0.1
 ```
 
 ## Run the image in a container
