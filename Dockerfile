@@ -24,7 +24,7 @@ RUN mkdir WMAS && cd WMAS && git init && git remote add origin https://github.co
 WORKDIR WMAS
 
 USER root
-RUN npm install --global https://github.com/cta-wave/wptreport.git#main
+RUN npm install --global https://github.com/cta-wave/wptreport.git#wmas2022
 USER ubuntu
 
 ARG commit
