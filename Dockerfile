@@ -34,7 +34,7 @@ RUN git fetch origin $commit
 RUN git reset --hard FETCH_HEAD
 
 ARG tests-rev
-RUN ./wmas2021-subset.sh
+RUN ./wmas2022-subset.sh
 RUN ./wpt manifest --no-download --rebuild
 RUN ./download-reference-results.sh
 RUN mv results reference-results
