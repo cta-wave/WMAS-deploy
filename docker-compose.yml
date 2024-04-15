@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  wmas2021:
+  wmas2022:
     container_name: wmas2022
     image: wmas2022:latest
     network_mode: "bridge"
