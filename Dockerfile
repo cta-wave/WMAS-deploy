@@ -1,14 +1,12 @@
-FROM ubuntu:20.04
+FROM python:3.10
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # install packages
 RUN apt update &&\
-    apt install git curl python3 python3-pip nodejs npm dnsmasq -y
+    apt install git curl nodejs npm dnsmasq -y
 
-RUN rm /usr/bin/python ; ln -s /usr/bin/python3 /usr/bin/python
-
-RUN pip3 install --upgrade pip virtualenv virtualenvwrapper
+RUN python -m pip install --upgrade pip virtualenv virtualenvwrapper requests
 
 ENV APP_DIR /home/ubuntu
 
