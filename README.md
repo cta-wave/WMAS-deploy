@@ -20,7 +20,7 @@ $ sudo ./build.sh wmas2020 latest
 ```
 
 ```
-$ sudo ./build.sh wmas2020-v1.1.1 1.1.1
+$ sudo ./build.sh wmas2020-v1.1.2 1.1.2
 ```
 
 ## Run the image in a container
