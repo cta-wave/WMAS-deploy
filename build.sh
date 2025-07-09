@@ -29,4 +29,4 @@ if [ $no_cache = true ]; then
   args="$args --no-cache"
 fi
 
-docker build --network="host" --build-arg commit=$1 $args -t wmas2023:$2 .
+docker build --network="host" --build-arg commit=$1 $args -t wmas2018-rework:$2 .

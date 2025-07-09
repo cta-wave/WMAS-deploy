@@ -2,8 +2,8 @@ version: '3'
 
 services:
   wmas2023:
-    container_name: wmas2023
-    image: wmas2023:latest
+    container_name: wmas2018-rework
+    image: wmas2018-rework:latest
     network_mode: "bridge"
     dns:
       - 1.1.1.1

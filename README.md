@@ -11,10 +11,10 @@ $ sudo ./build.sh <commit id/branch/version tag> <image-tag>
 
 For example:
 ```
-$ sudo ./build.sh wmas2023 latest
+$ sudo ./build.sh wmas2018-rework latest
 ```
 ```
-$ sudo ./build.sh wmas2023-v1.0.1 1.0.1
+$ sudo ./build.sh wmas2018-rework latest
 ```
 
 ## Run the image in a container
@@ -37,7 +37,7 @@ To access the test runner and perform tests, open `web-platform.test/_wave/`.
 ## View logs
 To display the logs, simply run:
 ```
-$ sudo docker logs wmas2023
+$ sudo docker logs wmas2018-rework
 ```
 
 ## Start, Stop and Restart existing container
@@ -45,17 +45,17 @@ You can control an existing container with a set of commands.
 
 Start container:
 ```
-$ sudo docker start wmas2023
+$ sudo docker start wmas2018-rework
 ```
 
 Stop container:
 ```
-$ sudo docker stop wmas2023
+$ sudo docker stop wmas2018-rework
 ```
 
 Restart container:
 ```
-$ sudo docker restart wmas2023
+$ sudo docker restart wmas2018-rework
 ```
 
 ## Update to new version
