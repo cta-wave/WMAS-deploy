@@ -30,6 +30,10 @@
     },
     "none": {}
   },
-  "aliases": [],
-  "results": "./results"
+  "wave": {
+    "aliases": [],
+    "results": "./results",
+    "enable_type_selection": true,
+    "web_root": "/wave"
+  }
 }

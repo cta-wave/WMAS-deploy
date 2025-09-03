@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 # install packages
 RUN apt update &&\
-    apt install git curl python3 nodejs npm virtualenv dnsmasq -y
+    apt install git curl python3 nodejs npm virtualenv dnsmasq python-requests -y
 
 ENV APP_DIR /home/ubuntu
 
