@@ -33,6 +33,12 @@ RUN ./wmas2018-subset.sh
 RUN ./download-reference-results.sh
 RUN mv results reference-results
 
+RUN echo "results/" >> .gitignore
+RUN echo "config.json" >> .gitignore
+RUN echo "certs/" >> .gitignore
+
+RUN ./wpt manifest --rebuild --no-download
+
 ENV TEST_RUNNER_IP 127.0.0.1
 
 CMD cp -r ./reference-results/* results ;\
