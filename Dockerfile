@@ -36,6 +36,7 @@ RUN mv results reference-results
 RUN echo "results/" >> .gitignore
 RUN echo "config.json" >> .gitignore
 RUN echo "certs/" >> .gitignore
+RUN echo "reference-results/" >> .gitignore
 
 RUN ./wpt manifest --rebuild --no-download
 
