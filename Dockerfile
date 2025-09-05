@@ -3,8 +3,10 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 # install packages
-RUN apt update &&\
-    apt install git curl python3 python3-pip nodejs npm dnsmasq -y
+RUN apt update
+RUN apt upgrade -y
+RUN apt install git curl python3 python3-pip -y
+RUN apt install nodejs npm dnsmasq -y
 
 RUN rm /usr/bin/python ; ln -s /usr/bin/python3 /usr/bin/python
 
@@ -35,9 +37,15 @@ RUN git reset --hard FETCH_HEAD
 
 ARG tests-rev
 RUN ./wmas2021-subset.sh
-RUN ./wpt manifest --no-download --rebuild
 RUN ./download-reference-results.sh
 RUN mv results reference-results
+
+RUN echo "results/" >> .gitignore
+RUN echo "config.json" >> .gitignore
+RUN echo "certs/" >> .gitignore
+RUN echo "reference-results/" >> .gitignore
+
+RUN ./wpt manifest --rebuild --no-download
 
 ENV TEST_RUNNER_IP 127.0.0.1
 
