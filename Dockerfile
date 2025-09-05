@@ -33,9 +33,16 @@ RUN git reset --hard FETCH_HEAD
 
 ARG tests-rev
 RUN ./wmas2023-subset.sh
-RUN ./wpt manifest --no-download --rebuild
 RUN ./download-reference-results.sh
 RUN mv results reference-results
+
+
+RUN echo "results/" >> .gitignore
+RUN echo "config.json" >> .gitignore
+RUN echo "certs/" >> .gitignore
+RUN echo "reference-results/" >> .gitignore
+
+RUN ./wpt manifest --rebuild --no-download
 
 ENV TEST_RUNNER_IP 127.0.0.1
 
